@@ -1,5 +1,8 @@
 import { Outlet } from 'react-router-dom'
 import type { ReactNode } from 'react'
+import Header from './header/Header'
+import Footer from './footer/Footer'
+
 
 interface Props {
   /** 상단 메뉴 링크들. 각 feature 가 자기 메뉴 컴포넌트를 만들어 App.tsx 에서 조립한다. */
@@ -12,6 +15,7 @@ interface Props {
 export function Layout({ nav, actions }: Props) {
   return (
     <div className="container">
+      <Header/>
       <nav>
         {nav}
         {actions && <span className="right">{actions}</span>}
@@ -19,6 +23,7 @@ export function Layout({ nav, actions }: Props) {
       <main>
         <Outlet />
       </main>
+      <Footer/>
     </div>
   )
 }

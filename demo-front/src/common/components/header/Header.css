@@ -1,0 +1,88 @@
+/* ===== 헤더 ===== */
+
+.header {
+   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+
+  height: 84px;
+  padding: 0 48px;
+
+  color: var(--main-ivory);
+  background: var(--main-bg-mid);
+
+  transition: background 0.4s, height 0.4s;
+}
+
+/* 스크롤을 내렸을 때 */
+.header.scrolled {
+  height: 68px;
+  background: rgba(42, 4, 7, 0.94);
+  backdrop-filter: blur(8px);
+}
+
+.header .brand {
+  font-size: 30px;
+  letter-spacing: 0.2em;
+  color: var(--main-ivory);
+}
+
+.header-nav {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 6vw;
+
+  font-family: var(--main-serif-en);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.header-util {
+  display: flex;
+  gap: 32px;
+
+  font-family: var(--main-serif-en);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.header-nav a,
+.header-util span {
+  transition: color 0.25s;
+  cursor: pointer;
+}
+
+.header-nav a:hover,
+.header-util span:hover {
+  color: var(--main-gold-light);
+}
+
+
+/* ===== 모바일 반응형 ===== */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+  }
+
+  .header .brand {
+    font-size: 24px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-util {
+    margin-left: auto;
+    gap: 20px;
+    font-size: 15px;
+  }
+}
