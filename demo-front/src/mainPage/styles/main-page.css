@@ -60,8 +60,9 @@
 /* ===== 헤더 ===== */
 
 .main-page .header {
-  position: fixed;
-  top: 0;
+  /*position: fixed;
+  top: 0;*/
+  position: relative;
   left: 0;
   right: 0;
   z-index: 50;

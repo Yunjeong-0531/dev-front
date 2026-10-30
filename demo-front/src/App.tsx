@@ -6,7 +6,7 @@ import { UserMenu } from '@/auth/components/UserMenu'
 import { authRoutes } from '@/auth/routes'
 import { AccommodationNav } from '@/accommodation/components/AccommodationNav'
 import { accommodationRoutes } from '@/accommodation/routes'
-import { mainRoutes } from '@/mainPageUI/routes'
+import { mainRoutes } from '@/mainPage/routes'
 
 /**
  * 조립(composition) 지점. feature 들은 각자 routes / Nav 를 export 하고, 여기서만 합친다.
