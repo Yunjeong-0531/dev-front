@@ -1,0 +1,61 @@
+/* 구글 폰트 불러오기 (반드시 맨 위!) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+:root {
+  /* 화이트 + 베이지 한 방울 */
+  --ivory: #faf7f2;
+  --paper: #f3ede4;
+  --sand: #e6dccd;
+
+  /* 와인 계열 (900이 가장 진함) */
+  --wine-900: #3b0f1a;
+  --wine-700: #5e1a2b;
+  --wine-500: #7a2438;
+  --wine-frame: #4f1626;   /* 헤더 + 사진 띠에 같이 쓰는 와인색 */
+
+  --gold: #b89b6a;     /* 포인트 금빛 */
+  --ink: #2b2325;      /* 본문 글자 */
+  --muted: #7d7074;    /* 보조 글자 */
+  --line: #e2d8c9;     /* 가는 선 */
+
+  /* 글꼴 */
+  --serif-en: 'Cormorant Garamond', 'Noto Serif KR', serif;
+  --serif-kr: 'Noto Serif KR', serif;
+  --sans: 'Noto Sans KR', system-ui, sans-serif;
+
+    /* 아난티 느낌의 딥 버건디 + 금색 */
+  --bg-deep: #2a0407;
+  --bg-mid: #4a0708;
+  --gold-light: #f3dba0;
+  --gold-deep: #b98a3e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--sans);
+  font-weight: 300;
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--ivory);
+  /* 종이 질감: 아주 옅은 노이즈를 배경에 깔아요 */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}

@@ -6,6 +6,7 @@ import { UserMenu } from '@/auth/components/UserMenu'
 import { authRoutes } from '@/auth/routes'
 import { AccommodationNav } from '@/accommodation/components/AccommodationNav'
 import { accommodationRoutes } from '@/accommodation/routes'
+import { mainRoutes } from '@/mainPageUI/routes'
 
 /**
  * 조립(composition) 지점. feature 들은 각자 routes / Nav 를 export 하고, 여기서만 합친다.
@@ -27,9 +28,10 @@ export default function App() {
       ),
       children: [
         // 숙소 목록이 홈이 되면 여기를 /accommodations 로 바꾸세요
-        { index: true, element: <Navigate to="/me" replace /> },
+        { index: true, element: <Navigate to="/main" replace /> },
         ...authRoutes,
         ...accommodationRoutes,
+        ...mainRoutes,
         { path: '*', element: <NotFound /> },
       ],
     },

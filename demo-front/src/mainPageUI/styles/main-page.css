@@ -1,0 +1,480 @@
+/* ===== 메인 페이지 기본 설정 ===== */
+
+.main-page {
+  min-height: 100vh;
+  font-family: var(--main-sans);
+  font-weight: 300;
+  color: var(--main-ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+
+  background-color: var(--main-ivory);
+}
+
+.main-page a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-page button {
+  font-family: inherit;
+}
+
+/* 스크롤 이동 시 고정 헤더에 가려지지 않도록 설정 */
+.main-page [id] {
+  scroll-margin-top: 70px;
+}
+
+/* ===== 공통 레이아웃 ===== */
+
+.main-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.main-page .eyebrow {
+  font-family: var(--main-serif-en);
+  font-size: 13px;
+  letter-spacing: 0.4em;
+  color: var(--main-wine-500);
+  margin-bottom: 18px;
+}
+
+.main-page .section-title {
+  font-family: var(--main-serif-kr);
+  font-weight: 300;
+  font-size: clamp(26px, 3.4vw, 38px);
+  line-height: 1.5;
+  color: var(--main-wine-900);
+}
+
+/* 브랜드 이름 공통 */
+.main-page .brand {
+  font-family: var(--main-serif-en);
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+}
+
+/* ===== 헤더 ===== */
+
+.main-page .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+
+  height: 84px;
+  padding: 0 48px;
+
+  color: var(--main-ivory);
+  background: var(--main-bg-mid);
+
+  transition: background 0.4s, height 0.4s;
+}
+
+/* 스크롤을 내렸을 때 */
+.main-page .header.scrolled {
+  height: 68px;
+  background: rgba(42, 4, 7, 0.94);
+  backdrop-filter: blur(8px);
+}
+
+.main-page .header .brand {
+  font-size: 30px;
+  letter-spacing: 0.2em;
+  color: var(--main-ivory);
+}
+
+.main-page .header-nav {
+  flex: 1;
+
+  display: flex;
+  justify-content: space-evenly;
+
+  padding: 0 6vw;
+
+  font-family: var(--main-serif-en);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.main-page .header-util {
+  display: flex;
+  gap: 32px;
+
+  font-family: var(--main-serif-en);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.main-page .header-nav a,
+.main-page .header-util span {
+  transition: color 0.25s;
+  cursor: pointer;
+}
+
+.main-page .header-nav a:hover,
+.main-page .header-util span:hover {
+  color: var(--main-gold-light);
+}
+
+/* ===== 오른쪽 가장자리 세로 예약 탭 ===== */
+
+.main-page .reserve-tab {
+  position: fixed;
+  right: 0;
+  bottom: 14vh;
+  z-index: 60;
+
+  writing-mode: vertical-rl;
+
+  padding: 30px 15px;
+
+  background: rgba(250, 247, 242, 0.92);
+  color: var(--main-bg-mid);
+
+  font-family: var(--main-serif-en);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+
+  transition: 0.3s;
+}
+
+.main-page .reserve-tab:hover {
+  background: var(--main-gold-light);
+  padding-right: 22px;
+}
+
+/* ===== 히어로 ===== */
+
+.main-page .hero {
+  padding-top: 84px;
+  background: var(--main-bg-mid);
+}
+
+.main-page .hero-frame {
+  position: relative;
+
+  height: calc(100vh - 84px);
+  min-height: 480px;
+
+  border: var(--main-frame-w) solid var(--main-bg-mid);
+}
+
+/* 사진 안쪽의 얇은 선 */
+.main-page .hero-frame::after {
+  content: '';
+
+  position: absolute;
+  inset: 14px;
+
+  border: 1px solid rgba(250, 247, 242, 0.5);
+
+  pointer-events: none;
+}
+
+/* 히어로 사진 */
+.main-page .hero-image {
+  position: absolute;
+  inset: 0;
+
+  background: url('/images/hero.jpeg') center / cover no-repeat;
+}
+
+/* ===== 소개 + 사진 액자 ===== */
+
+.main-page .space {
+  padding: 120px 0 110px;
+  text-align: center;
+}
+
+.main-page .space-title {
+  font-family: var(--main-serif-kr);
+  font-weight: 300;
+  font-size: clamp(26px, 3.4vw, 38px);
+  color: var(--main-wine-900);
+}
+
+.main-page .space-frame {
+  position: relative;
+
+  width: min(1100px, calc(100% - 48px));
+  margin: 56px auto 0;
+
+  border: 22px solid var(--main-bg-mid);
+
+  box-shadow: 0 30px 70px rgba(42, 4, 7, 0.25);
+}
+
+/* 사진 안쪽의 얇은 선 */
+.main-page .space-frame::after {
+  content: '';
+
+  position: absolute;
+  inset: 10px;
+
+  border: 1px solid rgba(250, 247, 242, 0.5);
+
+  pointer-events: none;
+}
+
+.main-page .space-image {
+  aspect-ratio: 16 / 9;
+
+  background: url('/images/hero.jpeg') center / cover no-repeat;
+}
+
+/* ===== 숙소 보드 ===== */
+
+.main-page .board-section {
+  padding: 90px 0 140px;
+  background: var(--main-paper);
+}
+
+.main-page .tabs {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+  margin: 32px 0 40px;
+}
+
+.main-page .tab {
+  background: transparent;
+  border: 1px solid var(--main-line);
+
+  padding: 9px 22px;
+
+  font-size: 13px;
+  letter-spacing: 0.1em;
+
+  color: var(--main-muted);
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.main-page .tab:hover {
+  border-color: var(--main-bg-mid);
+  color: var(--main-bg-mid);
+}
+
+.main-page .tab.active {
+  background: var(--main-bg-mid);
+  border-color: var(--main-bg-mid);
+  color: var(--main-ivory);
+}
+
+.main-page .board {
+  display: grid;
+
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(270px, 1fr);
+
+  gap: 20px;
+
+  overflow-x: auto;
+  padding-bottom: 16px;
+}
+
+.main-page .column {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+  padding: 18px;
+
+  background: rgba(230, 220, 205, 0.45);
+}
+
+.main-page .column-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 12px;
+
+  border-bottom: 1px solid var(--main-gold);
+}
+
+.main-page .column-head h3 {
+  font-family: var(--main-serif-kr);
+  font-weight: 400;
+  color: var(--main-wine-900);
+}
+
+.main-page .column-head span {
+  font-family: var(--main-serif-en);
+  color: var(--main-muted);
+}
+
+.main-page .empty {
+  text-align: center;
+
+  padding: 40px 0;
+
+  font-size: 14px;
+  color: var(--main-muted);
+}
+
+/* ===== 숙소 카드 ===== */
+
+.main-page .card {
+  background: var(--main-ivory);
+
+  box-shadow: 0 2px 10px rgba(59, 15, 26, 0.06);
+
+  transition: 0.3s;
+}
+
+.main-page .card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 14px 30px rgba(59, 15, 26, 0.15);
+}
+
+.main-page .card-img {
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+
+.main-page .badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  background: rgba(250, 247, 242, 0.92);
+  color: var(--main-bg-mid);
+
+  font-size: 11px;
+  letter-spacing: 0.1em;
+
+  padding: 4px 10px;
+}
+
+.main-page .discount {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  background: var(--main-bg-mid);
+  color: var(--main-ivory);
+
+  font-size: 12px;
+  padding: 4px 10px;
+}
+
+.main-page .card-body {
+  padding: 16px 18px 20px;
+}
+
+.main-page .card-body h4 {
+  font-family: var(--main-serif-kr);
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--main-wine-900);
+}
+
+.main-page .meta {
+  font-size: 13px;
+  color: var(--main-muted);
+}
+
+.main-page .price {
+  margin-top: 10px;
+
+  font-family: var(--main-serif-en);
+  font-size: 21px;
+  font-weight: 500;
+
+  color: var(--main-bg-mid);
+}
+
+/* ===== 푸터 ===== */
+
+.main-page .footer {
+  background: var(--main-bg-deep);
+  color: rgba(250, 247, 242, 0.75);
+
+  padding: 72px 0 40px;
+
+  text-align: center;
+}
+
+.main-page .footer .brand {
+  color: var(--main-gold-light);
+}
+
+.main-page .footer-links {
+  display: flex;
+  justify-content: center;
+
+  gap: 28px;
+  margin: 28px 0;
+
+  font-size: 12px;
+  letter-spacing: 0.2em;
+}
+
+.main-page .copy {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* ===== 모바일 반응형 ===== */
+
+@media (max-width: 768px) {
+  .main-page .header {
+    padding: 0 20px;
+  }
+
+  .main-page .header .brand {
+    font-size: 24px;
+  }
+
+  .main-page .header-nav {
+    display: none;
+  }
+
+  .main-page .header-util {
+    margin-left: auto;
+    gap: 20px;
+    font-size: 15px;
+  }
+
+  .main-page .reserve-tab {
+    padding: 22px 11px;
+    font-size: 12px;
+  }
+
+  .main-page .space {
+    padding: 80px 0;
+  }
+
+  .main-page .space-frame {
+    border-width: 12px;
+  }
+
+  .main-page .hero-frame {
+    min-height: 420px;
+  }
+
+  .main-page .hero-frame::after {
+    inset: 8px;
+  }
+
+  :root {
+    --main-frame-w: 12px;
+  }
+}

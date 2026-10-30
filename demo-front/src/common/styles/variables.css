@@ -1,0 +1,9 @@
+:root {
+  /* 공통 글꼴 */
+  --font-family-base: system-ui, -apple-system, 'Noto Sans KR', sans-serif;
+
+  /* 공통 기본 색상 */
+  --color-text: #222222;
+  --color-background: #ffffff;
+  --color-border: #dddddd;
+}

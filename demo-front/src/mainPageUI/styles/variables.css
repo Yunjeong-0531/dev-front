@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+:root {
+  /* 메인 페이지 색상 */
+  --main-ivory: #faf7f2;
+  --main-paper: #f3ede4;
+  --main-sand: #e6dccd;
+
+  /* 와인색 계열 */
+  --main-wine-900: #3b0f1a;
+  --main-wine-700: #5e1a2b;
+  --main-wine-500: #7a2438;
+  --main-wine-frame: #4f1626;
+
+  /* 금색 계열 */
+  --main-gold: #b89b6a;
+  --main-gold-light: #f3dba0;
+  --main-gold-deep: #b98a3e;
+
+  /* 기타 색상 */
+  --main-ink: #2b2325;
+  --main-muted: #7d7074;
+  --main-line: #e2d8c9;
+
+  /* 배경색 */
+  --main-bg-deep: #2a0407;
+  --main-bg-mid: #4a0708;
+
+  /* 폰트 */
+  --main-serif-en: 'Cormorant Garamond', 'Noto Serif KR', serif;
+  --main-serif-kr: 'Noto Serif KR', serif;
+  --main-sans: 'Noto Sans KR', system-ui, sans-serif;
+
+  /* 액자 테두리 두께 */
+  --main-frame-w: 28px;
+}
