@@ -5,6 +5,7 @@ import { ErrorBox, InfoBox } from '@/common/components/ErrorBox'
 import { TermsAgreement } from '../components/TermsAgreement'
 import { useTermsAgreement } from '../hooks/useTermsAgreement'
 import { useCheckEmail, useSignup } from '../hooks/mutations'
+import styles from '../components/AuthPageLayout.module.css'
 
 export default function SignupPage() {
   const { terms, agreed, toggle, toggleAll, requiredOk, error: termsError } = useTermsAgreement()
@@ -36,7 +37,7 @@ export default function SignupPage() {
     <>
       <h2>회원가입</h2>
       <form onSubmit={submit}>
-        <div className="row">
+        <div className={styles.row}>
           <input placeholder="이메일" type="email" value={form.email} onChange={set('email')} required />
           <button type="button" disabled={!form.email || checkEmail.isPending} onClick={() => checkEmail.mutate(form.email)}>
             중복 확인

@@ -1,0 +1,30 @@
+/* ===== 오른쪽 가장자리 세로 예약 탭 ===== */
+.tab {
+  position: fixed;
+  right: 0;
+  bottom: 14vh;
+  z-index: 60;
+  writing-mode: vertical-rl;      /* 글자를 세로로 */
+  padding: 30px 15px;
+  background: rgba(250, 247, 242, 0.92);
+  color: var(--bg-mid);
+  font-family: var(--serif-en);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
+}
+
+.tab:hover {
+  background: var(--gold-light);
+  padding-right: 22px;            /* 마우스를 올리면 살짝 튀어나옴 */
+}
+
+@media (max-width: 768px) {
+  .tab {
+    padding: 22px 11px;
+    font-size: 12px;
+  }
+}

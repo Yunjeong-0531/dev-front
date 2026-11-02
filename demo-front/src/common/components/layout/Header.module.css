@@ -1,0 +1,92 @@
+/* ===== 헤더 (화면 위에 고정) ===== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  height: var(--header-h);
+  padding: 0 48px;
+  color: var(--ivory);
+  background: var(--bg-mid);
+  transition: background 0.4s, height 0.4s;
+}
+
+/* 스크롤을 내리면 진한 배경이 깔림 */
+.scrolled {
+  height: 68px;
+  background: rgba(42, 4, 7, 0.94);
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  font-family: var(--serif-en);
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--ivory);
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;   /* 메뉴를 넓게 펼침 */
+  padding: 0 6vw;
+  font-family: var(--serif-en);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.util {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-family: var(--serif-en);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* util 영역: 글자(KO), 링크(LOGIN/MY), 버튼(LOGOUT)을 같은 모양으로 */
+.util button {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.nav a,
+.util a,
+.util span,
+.util button {
+  transition: color 0.25s;
+  cursor: pointer;
+}
+
+.nav a:hover,
+.util a:hover,
+.util span:hover,
+.util button:hover {
+  color: var(--gold-light);
+}
+
+/* ===== 모바일 ===== */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+  }
+  .brand {
+    font-size: 24px;
+  }
+  .nav {
+    display: none;                /* 모바일에선 메뉴를 숨김 (나중에 햄버거 메뉴로) */
+  }
+  .util {
+    margin-left: auto;
+    gap: 20px;
+    font-size: 15px;
+  }
+}

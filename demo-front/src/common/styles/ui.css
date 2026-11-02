@@ -1,0 +1,18 @@
+/* 공용 메시지 박스 (common/components/ErrorBox.tsx 가 사용) */
+.box {
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 14px;
+  border: 1px solid var(--line);
+}
+
+.box.error {
+  background: #fbeaec;
+  border-color: #e9c3c9;
+  color: var(--wine-700);
+}
+
+.box.info {
+  background: var(--paper);
+  color: var(--wine-900);
+}

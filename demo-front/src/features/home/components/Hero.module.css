@@ -1,0 +1,41 @@
+/* ===== 히어로: 화면을 꽉 채우는 액자 사진 ===== */
+.hero {
+  --frame-w: 28px;                /* 버건디 띠 두께. 이 숫자 하나로 조절돼요 */
+  padding-top: var(--header-h);   /* 고정 헤더 높이만큼 비워둠 */
+  background: var(--bg-mid);      /* 헤더와 같은 색이라 하나로 이어져 보임 */
+}
+
+.frame {
+  position: relative;
+  height: calc(100vh - var(--header-h));   /* 헤더를 뺀 화면 전체 */
+  min-height: 480px;
+  border: var(--frame-w) solid var(--bg-mid);   /* 굵은 버건디 띠 */
+}
+
+/* 사진 안쪽의 얇은 선 (액자 속 여백 느낌) */
+.frame::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(250, 247, 242, 0.5);
+  pointer-events: none;
+}
+
+/* 사진 원본 그대로 (어두운 막 없음) — public/images/hero.jpeg */
+.image {
+  position: absolute;
+  inset: 0;
+  background: url('/images/hero.jpeg') center / cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    --frame-w: 12px;              /* 모바일에선 띠를 얇게 */
+  }
+  .frame {
+    min-height: 420px;
+  }
+  .frame::after {
+    inset: 8px;
+  }
+}

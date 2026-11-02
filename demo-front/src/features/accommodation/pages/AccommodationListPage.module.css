@@ -1,0 +1,4 @@
+/* 고정 헤더에 가려지지 않게 상단 여백 */
+.page {
+  padding-top: var(--header-h);
+}

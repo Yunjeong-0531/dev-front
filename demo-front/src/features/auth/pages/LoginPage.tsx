@@ -26,6 +26,14 @@ export default function LoginPage() {
       <ErrorBox error={login.error} />
       <p>
         <Link to="/forgot-password">비밀번호를 잊으셨나요?</Link>
+        {' · '}
+        <Link to="/resend-email">인증 메일 재발송</Link>
+        {import.meta.env.DEV && (
+          <>
+            {' · '}
+            <Link to="/social-debug">소셜 로그인 테스트</Link>
+          </>
+        )}
       </p>
     </>
   )

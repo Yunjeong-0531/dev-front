@@ -1,0 +1,44 @@
+/* ===== 소개 + 사진 액자 ===== */
+.space {
+  padding: 120px 0 110px;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--serif-kr);
+  font-weight: 300;
+  font-size: clamp(26px, 3.4vw, 38px);
+  color: var(--wine-900);
+}
+
+/* 아래 frame / image 는 현재 Space.tsx 에서는 쓰지 않지만, 사진 액자를 다시 넣을 때 쓰도록 보존 */
+.frame {
+  position: relative;
+  width: min(1100px, calc(100% - 48px));
+  margin: 56px auto 0;
+  border: 22px solid var(--bg-mid);          /* 버건디 굵은 띠 */
+  box-shadow: 0 30px 70px rgba(42, 4, 7, 0.25);
+}
+
+/* 사진 안쪽의 얇은 선 */
+.frame::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(250, 247, 242, 0.5);
+  pointer-events: none;
+}
+
+.image {
+  aspect-ratio: 16 / 9;
+  background: url('/images/hero.jpeg') center / cover no-repeat;   /* 원본 그대로 */
+}
+
+@media (max-width: 768px) {
+  .space {
+    padding: 80px 0;
+  }
+  .frame {
+    border-width: 12px;
+  }
+}

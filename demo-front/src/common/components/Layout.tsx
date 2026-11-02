@@ -1,24 +1,27 @@
 import { Outlet } from 'react-router-dom'
 import type { ReactNode } from 'react'
+import { Footer } from './layout/Footer'
+import { Header } from './layout/Header'
+import type { HeaderMenu } from './layout/Header'
+import { ReservationTab } from './layout/ReservationTab'
+import { ScrollToHash } from './layout/ScrollToHash'
 
 interface Props {
-  /** 상단 메뉴 링크들. 각 feature 가 자기 메뉴 컴포넌트를 만들어 App.tsx 에서 조립한다. */
-  nav?: ReactNode
-  /** 상단 우측 영역 (사용자 메뉴 등) */
-  actions?: ReactNode
+  menus: HeaderMenu[]
+  util?: ReactNode
 }
 
-/** common 은 feature(auth 등)를 import 하지 않는다. 필요한 것은 props 로 받는다. */
-export function Layout({ nav, actions }: Props) {
+/** 사이트 공통 틀: 고정 헤더 + 예약 탭 + 본문(Outlet) + 푸터. common 은 feature 를 import 하지 않는다. */
+export function Layout({ menus, util }: Props) {
   return (
-    <div className="container">
-      <nav>
-        {nav}
-        {actions && <span className="right">{actions}</span>}
-      </nav>
+    <>
+      <ScrollToHash />
+      <Header menus={menus} util={util} />
+      <ReservationTab />
       <main>
         <Outlet />
       </main>
-    </div>
+      <Footer />
+    </>
   )
 }

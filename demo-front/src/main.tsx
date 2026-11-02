@@ -1,12 +1,13 @@
+/* 메인 tsx */
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClient } from '@/common/api/queryClient'
 import { AuthProvider } from '@/features/auth/context/AuthProvider'
-import App from './app/App'
-import '@/common/styles/variables.css'
+import App from './App'
 import '@/common/styles/global.css'
+import '@/common/styles/ui.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

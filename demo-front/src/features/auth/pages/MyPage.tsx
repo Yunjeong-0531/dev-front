@@ -13,6 +13,7 @@ import {
   useResendEmail,
   useWithdraw,
 } from '../hooks/mutations'
+import styles from '../components/AuthPageLayout.module.css'
 
 /** 내 계정: 보호 API 조회(useQuery), 토큰 재발급, 전체 로그아웃, 비밀번호 변경, 탈퇴를 시험할 수 있다. */
 export default function MyPage() {
@@ -64,11 +65,11 @@ export default function MyPage() {
         </div>
       )}
 
-      <div className="row wrap">
+      <div className={`${styles.row} ${styles.wrap}`}>
         <button disabled={me.isFetching} onClick={() => me.refetch()}>내 정보 다시 조회 (보호 API)</button>
         <button onClick={() => manualRefresh.mutate()}>토큰 재발급 (/refresh)</button>
         <button onClick={() => logoutAll.mutate(undefined, { onSettled: () => navigate('/login') })}>전체 기기 로그아웃</button>
-        <button className="danger" onClick={handleWithdraw}>회원 탈퇴</button>
+        <button className={styles.danger} onClick={handleWithdraw}>회원 탈퇴</button>
       </div>
 
       {me.data && <pre>{JSON.stringify(me.data, null, 2)}</pre>}

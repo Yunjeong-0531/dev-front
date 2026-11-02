@@ -1,0 +1,5 @@
+.wrap {
+  padding: calc(var(--header-h) + 80px) 32px 120px;
+  text-align: center;
+  color: var(--muted);
+}
