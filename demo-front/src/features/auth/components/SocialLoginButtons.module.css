@@ -1,0 +1,67 @@
+.wrap {
+  margin: 28px 0 8px;
+}
+
+/* "───  소셜 계정으로 계속하기  ───" */
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.title::before,
+.title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* AuthPageLayout 의 ".page button" 보다 우선하도록 선택자를 한 단계 더 구체적으로 */
+.list .btn {
+  padding: 12px 16px;
+  border: 1px solid transparent;
+  font: inherit;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.list .kakao,
+.list .kakao:hover:not(:disabled) {
+  background: #fee500;
+  border-color: #fee500;
+  color: #191919;
+}
+
+.list .naver,
+.list .naver:hover:not(:disabled) {
+  background: #03c75a;
+  border-color: #03c75a;
+  color: #fff;
+}
+
+.list .google,
+.list .google:hover:not(:disabled) {
+  background: #fff;
+  border-color: #dadce0;
+  color: #3c4043;
+}
+
+.list .btn:hover:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.hint {
+  margin: 20px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}

@@ -6,6 +6,7 @@ import type {
   SignupRequest,
   SignupResponse,
   SocialCompleteRequest,
+  SocialLoginRequest,
   SocialLoginResponse,
   Term,
 } from '../types'
@@ -37,8 +38,8 @@ export const authApi = {
   resetPassword: (token: string, newPassword: string) =>
     request<void>('/auth/password/reset', { method: 'POST', body: { token, newPassword } }),
 
-  socialLogin: (provider: string, accessToken: string) =>
-    request<SocialLoginResponse>(`/auth/social/${provider}`, { method: 'POST', body: { accessToken } }),
+  socialLogin: (provider: string, body: SocialLoginRequest )=>
+    request<SocialLoginResponse>(`/auth/social/${provider}`, { method: 'POST', body }),
 
   socialComplete: (body: SocialCompleteRequest) =>
     request<TokenResponse>('/auth/social/complete', { method: 'POST', body }),

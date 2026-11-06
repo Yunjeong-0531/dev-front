@@ -3,4 +3,6 @@
  * 다른 feature 는 '@/features/auth/public' 만 import 한다. (auth 내부 파일 직접 import 금지)
  */
 export { useAuth } from './context/auth-context'
+export { useHasRole } from './hooks/useHasRole'
 export { ProtectedRoute } from './components/ProtectedRoute'
+export { RoleRoute } from './components/RoleRoute'

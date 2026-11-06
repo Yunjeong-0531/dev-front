@@ -2,6 +2,7 @@ import { useMutation } from '@tanstack/react-query'
 import { tokenStore } from '@/common/api/tokenStore'
 import { authApi } from '../api/auth'
 import { userApi } from '../api/user'
+import type { SocialLoginRequest } from '../types'
 
 /**
  * 규칙
@@ -58,8 +59,8 @@ export const useResetPassword = () =>
 
 export const useSocialLogin = () =>
   useMutation({
-    mutationFn: (v: { provider: string; accessToken: string }) =>
-      authApi.socialLogin(v.provider, v.accessToken),
+    mutationFn: (v: { provider: string; body: SocialLoginRequest }) =>
+      authApi.socialLogin(v.provider, v.body),
     onSuccess: (res) => {
       if (!res.newUser && res.tokens) tokenStore.set(res.tokens)
     },
