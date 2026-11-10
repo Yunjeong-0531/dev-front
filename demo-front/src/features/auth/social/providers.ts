@@ -47,6 +47,7 @@ const ALL_PROVIDERS: SocialProviderConfig[] = [
 ]
 /** client-id가 설정된 제공자만 버튼으로 노출된다 */
 export const enabledSocialProviders = ALL_PROVIDERS.filter((p)=> !!p.clientId)
+console.log(env.VITE_KAKAO_CLIENT_ID)
 
 export function isSocialProviderId(v: string | undefined): v is SocialProviderId {
     return v === 'kakao' || v === 'naver' || v === 'google'
@@ -77,7 +78,7 @@ export function startSocialLogin(id: SocialProviderId): void {
 
     const params = new URLSearchParams({
         client_id: cfg.clientId,
-        redirect_Uri: redirectUriFor(id),
+        redirect_uri: redirectUriFor(id),
         response_type: 'code',
         state,
         ...cfg.extraParams,

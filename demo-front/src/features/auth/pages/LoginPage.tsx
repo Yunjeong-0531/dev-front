@@ -3,6 +3,7 @@ import type { FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ErrorBox } from '@/common/components/ErrorBox'
 import { useLogin } from '../hooks/mutations'
+import { SocialLoginButtons } from '../components/SocialLoginButtons'
 
 export default function LoginPage() {
   const navigate = useNavigate()
@@ -24,6 +25,7 @@ export default function LoginPage() {
         <button type="submit" disabled={login.isPending}>로그인</button>
       </form>
       <ErrorBox error={login.error} />
+      <SocialLoginButtons/>
       <p>
         <Link to="/forgot-password">비밀번호를 잊으셨나요?</Link>
         {' · '}
